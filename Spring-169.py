@@ -714,14 +714,12 @@ class compression:
                                     
                                     	   
                                
-                                    if B==0:
-                                    	INFO3="0"+INFO4+INFO_4
-                                    if B==1:
-                                    	INFO3="1"+INFO5+INFO_4
+                                  
                                    
                                     
-
+                                    INFO3=INFO5+INFO_4
                                     INFO2=INFO3
+                                    
                                     #print(len(INFO3))
                                     #n = int(INFO2, 2)
                                                                                                     
