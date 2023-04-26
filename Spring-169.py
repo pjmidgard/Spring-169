@@ -510,6 +510,7 @@ class compression:
                         Times_change_info=2
                         Times_change_info1=0
                         s=""
+                        INFO_5=""
                         
                         
                         
@@ -518,7 +519,7 @@ class compression:
                         
                        
                         INFO3=""
-
+                        INFO_5=""
                         ssTimes_change_info=0
                         
                         
@@ -587,6 +588,7 @@ class compression:
                                                 z=z+1
                                         INFO2=INFO
                                         long_file3=len(INFO2)
+                                        INFO2="1"+INFO2
                                     long_file2=len(INFO2)  
                                     block3=0
                                     INFO3=""
@@ -601,18 +603,21 @@ class compression:
                                     F=0
                                     B=0
                                     count4=-1
-                                 
+                                    
                                     long_file2=len(INFO2)
                                     #print(long_file2)
-                                    N2=-10
+                                    N2=-1
                                     N1=1
                                     N5=0
                                     long2=1
-                                    
-                                    N8=len(INFO2)
-                                    long_file14=N8+1
+                                    N9=int(INFO2,2)
+                                    N10=bin(N9)[2:]
+                                    N8=len(N10)
+                                
+                                
+                                    long_file14=(N8+1)
                                     while N1!=0:
-                                        N2+=10
+                                        N2+=1
                                         long_file14-=1
                                         long=len(INFO2)
                                         long2=long-N2
@@ -620,12 +625,29 @@ class compression:
                                             B=1
                                             N1=0
                                         if B==0:
-                                            N=int(INFO2[:long-N2],2)
+                                            N=int(INFO2[N2:],2)
                                             if N==0:
                                                 B=1
                                                 N1=0
                                             N5=N//long_file14
-                                            N1=N%long_file14
+                                            N_1=N%long_file14
+                                            Bias=bin(N5)[2:]
+                                            INFO4=Bias+INFO2[:N2]
+                                            if Times3==0:
+                                                
+                                                N10=bin(N8)[2:]
+                                            
+                                                N10_long=len(N10)
+                                                
+                                                C3="0"+str(7)+"b"
+                                                #print(N10_long)
+                                            INFO_4=format(N2,C3)
+                                            if len(INFO_4)>7:
+                                                raise SystemExit
+                                            INFO5=INFO4+INFO_4
+                                            if len(INFO5)<N8:
+                                                N1=0
+                                        
                                     	#print(N2)
                                     Bias=bin(N5)[2:]
                                     if N5==0:
@@ -633,31 +655,28 @@ class compression:
                                     long61=len(Bias)
                                     long62=0
                                     if B==0:
-                                    	long62=len(INFO2[long-N2:])
+                                    	long62=len(INFO2[:N2])
                                     NS=long61
                                     NS1=N8-long62
                                     NS2=NS1-1-long61
                                     Nj=len(bin(N2)[2:])
                                     #print(N2)
+                                    if Times3==0:
+                                        N9=bin(N8)[2:]
+                                        N10_long=len(N9)
+                                        C3="0"+str(7)+"b"
                                     
+                                    INFO_4=format(N2,C3)
+                                    INFO4=Bias+INFO2[:N2]
                                     
-                                    N_10=40
-                                    C2="0"+str(N_10)+"b"
-                                    INFO_4=format(long_file14,C2)
-                                    
-                                    
-                                    Minus1=len(INFO2)
-                                    INFO5=Bias+INFO2[long-N2:]
-                                    Bias_Size=len(Bias)
+                                    INFO3=INFO4
 
-                                    N_10=40
-                                    C2="0"+str(N_10)+"b"
-                                    INFO_41=format(Bias_Size,C2)
-                                   
-                                    INFO3=INFO5+INFO_4+INFO_41
-                                    INFO2=INFO3
                                     
-                                    #print(len(INFO3))
+                                    
+                                    
+
+                                    INFO2=INFO_4+INFO3
+                                    
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -688,10 +707,10 @@ class compression:
                                                 z=z+1
                                         INFO3=add_bits118+INFO3
                                         Times=1
-                                        
+                                        B1=format(long_file1,'032b')
                                         B5=format(Times3,'048b')
-                                        
-                                        INFO3=B5+INFO3
+                                    
+                                        INFO3=B1+B5+INFO3
                                     
                                     
                                     #print(Times)
