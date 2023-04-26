@@ -604,7 +604,7 @@ class compression:
                                  
                                     long_file2=len(INFO2)
                                     #print(long_file2)
-                                    N2=-1
+                                    N2=-10
                                     N1=1
                                     N5=0
                                     long2=1
