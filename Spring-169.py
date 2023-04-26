@@ -696,6 +696,8 @@ class compression:
                                     if len(INFO2)<=256 or Times3==((2**48)-1):
                                         #print(Bias2)
 
+                                       
+
                                         INFO3="1"+INFO3
                                         long_file=len(INFO3)
                                         add_bits118=""
@@ -710,7 +712,11 @@ class compression:
                                         B1=format(long_file1,'032b')
                                         B5=format(Times3,'048b')
                                     
-                                        INFO3=B1+B5+INFO3
+                                        INFO3="1"+B1+B5+INFO3
+                                        
+                                        INFO__3=int(INFO3,2)
+                                        INFO3=format(INFO__3,'0344b')
+                                        
                                     
                                     
                                     #print(Times)
