@@ -639,57 +639,7 @@ class compression:
                                     NS2=NS1-1-long61
                                     Nj=len(bin(N2)[2:])
                                     #print(N2)
-                                    if Nj>(2**64)-1:
-                                        B=1
                                     
-                                    
-                                    
-                                    B6="0"+str((2**6)-1)+"b"
-                                    if Times3==0:
-                                    	Bias2=format(N2,B6)
-                                    	
-                                    	
-                                    	
-                                    	N1=1
-                                    	N5=0
-                                    	N6=0
-                                    	N11=Long_Divide_size_of_file
-                                    	#print(N11)
-                                       
-                                        
-                                     
-                                       
-                                    	
-                                    	long=len(INFO2)
-                                    	N=int(INFO2,2)
-                                    	while N6!=1:
-                                    		N11-=1
-                                    		#print(N11)
-                                    	
-	                                    	
-	                                    
-	                                    	
-	                                    	
-	                                    	#print(N)
-	                                    	if N==0:
-	                                    		N11=1
-	                                    		N6=1	                                    
-	                                    	if N11==0:
-	                                    		N11=(Long_Divide_size_of_file)-1
-	                                 
-	                                    	N5=N//(N11)
-	                                    	
-	                                    	N1=N%(N11)
-	                                    	
-	                                 
-	                                   
-	                                  
-	                                	                                   
-	                                    	#print(N5)
-	                                    	if N1==0 and N5!=0:
-	                                    		N6=1
-                                                            
-                                    Bias3=format(N2,B6)
                                     
                                     N_10=40
                                     C2="0"+str(N_10)+"b"
@@ -698,26 +648,13 @@ class compression:
                                     
                                     Minus1=len(INFO2)
                                     INFO5=Bias+INFO2[long-N2:]
-                                    #print(len(INFO5))
-                                    Minus1_1=int(INFO5,2)
-                                    Minus1-=50
-                                    C1="0"+str(Minus1)+"b"
-                                    C2="0"+str(Minus1+50)+"b"
-                                    INFO4=format(Minus1_1,C1)
-                                    INFO6=format(Minus1_1,C2)
-                                    Minus1_1_1=len(INFO4)
-                                    if Minus1==Minus1_1_1 and B==0:
-                                        B=0
-                                    else:
-                                        B=1
-                                  
-                                    
-                                    	   
-                               
-                                  
+                                    Bias_Size=len(Bias)
+
+                                    N_10=40
+                                    C2="0"+str(N_10)+"b"
+                                    INFO_41=format(Bias_Size,C2)
                                    
-                                    
-                                    INFO3=INFO5+INFO_4
+                                    INFO3=INFO5+INFO_4+INFO_41
                                     INFO2=INFO3
                                     
                                     #print(len(INFO3))
@@ -740,7 +677,7 @@ class compression:
                                     if len(INFO2)<=256 or Times3==((2**48)-1):
                                         #print(Bias2)
 
-                                        INFO3="1"+Bias3+Bias2+INFO3
+                                        INFO3="1"+INFO3
                                         long_file=len(INFO3)
                                         add_bits118=""
                                         count_bits=8-long_file%8
@@ -751,12 +688,10 @@ class compression:
                                                 z=z+1
                                         INFO3=add_bits118+INFO3
                                         Times=1
-                                        B1=format(long_file1,'032b')
+                                        
                                         B5=format(Times3,'048b')
-                                        B7="0"+str(Byte_Divide)+"b"
-                                    
-                                        B4=format(N11,B7)
-                                        INFO3=B4+B1+B5+INFO3
+                                        
+                                        INFO3=B5+INFO3
                                     
                                     
                                     #print(Times)
