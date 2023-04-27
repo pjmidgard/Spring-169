@@ -329,7 +329,7 @@ class compression:
                                         
 #######################################################Jurijus Pacalovas Exection Program######################################################################################
                                         #2**32#
-                                        #print(len(INFO2))
+                                        #print(INFO3)
                                         #os.system("pause")
                                         
                                         
@@ -337,7 +337,7 @@ class compression:
                
                                         n = int(INFO3, 2)
                                         binary_to_data=len(INFO3)
-                                        binary_to_data=(binary_to_data/8)*2
+                                        binary_to_data=Long_file*2
                                         binary_to_data=str(binary_to_data)
                                         binary_to_data="%0"+binary_to_data+"x"
                                         jl=binascii.unhexlify(binary_to_data % n)
