@@ -232,8 +232,12 @@ class compression:
                                             while size_data3[0:1]!="1":
                                                 if size_data3[0:1]=="0":
                                                     Start_file=Start_file[1:]
+                                                    size_data3=size_data3[1:]
+                                                    
+                                                    
                                              
                                             INFO2=Start_file[1:]
+                                            #print(INFO2)
                                     	  
                                     
 
@@ -253,24 +257,36 @@ class compression:
                                     count4=-1
                                  
                                     long_file2=len(INFO2)
+                                    #print(INFO2)
                                     INFO2_take_1=INFO2
                                     if INFO2_take_1[long_file2-1:long_file2]=="1":
-                                        INFO2=INFO2[long_file2-1:]
+                                        INFO3=INFO2[:long_file2-1]
+                                        #print(INFO2)
                                     elif INFO2_take_1[long_file2-1:long_file2]=="0":
-                                        INFO2=INFO2[long_file2-1:]
+                                        INFO2=INFO2[:long_file2-1]
                                         long_file3=len(INFO2)
-                                        Multiply=INFO2[:7]
+                                        Multiply=int(INFO2[:7],2)
                                         INFO2=INFO2[7:]
-                                        Multiply_N=int(INFO2[Multiply:],2)
+                                        #print(INFO2)
+                                        
+                                        if Multiply!=0:
+                                        	#print(Multiply)
+                                        	Multiply_N=int(INFO2[:Multiply],2)
+                                        	
+                                        else:
+                                        	
+                                        	Multiply=0
+                                        	Multiply_N=int(INFO2,2)
                                         Multiply_N=(16386-Multiply)*Multiply_N
+
                                         INFO_Save=bin(Multiply_N)[2:]
-                                        INFO3=INFO2[:Multiply]+INFO_Save
+                                        INFO3=INFO_Save+INFO2[Multiply:]
                                         
                                     
 
                                     
                                     INFO2=INFO3
-                                    #print(INFO3)
+                                    #print(len(INFO3))
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -288,9 +304,11 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Times3==Times_compress:
+                                    if Long_file+1==len(INFO3):
 
                                        INFO3=INFO3[1:]
+                                    
+                                       
                                        
                                        Times3=0
                                        #print(Times3)
@@ -311,7 +329,7 @@ class compression:
                                         
 #######################################################Jurijus Pacalovas Exection Program######################################################################################
                                         #2**32#
-                                        #print(INFO2)
+                                        #print(len(INFO2))
                                         #os.system("pause")
                                         
                                         
