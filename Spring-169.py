@@ -496,9 +496,8 @@ class compression:
                                     N1=1
                                     N5=0
                                     long2=1
-                                    N9=int(INFO2,2)
-                                    N10=bin(N9)[2:]
-                                    N8=len(N10)
+                                    N8=int(INFO2,2)
+                                    
                                 
                                 
                                     long_file14=16387
