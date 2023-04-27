@@ -255,9 +255,9 @@ class compression:
                                     long_file2=len(INFO2)
                                     INFO2_take_1=INFO2
                                     if INFO2_take_1[long_file2-1:long_file2]=="1":
-                                        INFO2=INFO2[long_file2:]
+                                        INFO2=INFO2[long_file2-1:]
                                     elif INFO2_take_1[long_file2-1:long_file2]=="0":
-                                        INFO2=INFO2[long_file2:]
+                                        INFO2=INFO2[long_file2-1:]
                                         long_file3=len(INFO2)
                                         Multiply=INFO2[:7]
                                         INFO2=INFO2[7:]
