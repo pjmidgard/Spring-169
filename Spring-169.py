@@ -533,8 +533,8 @@ class compression:
                                             if len(INFO_4)>7:
                                                 N1=0
                                                 B=1
-                                            INFO5=INFO4+INFO_4
-                                            if len(INFO5)<N8 and B!=1:
+                                            INFO_5=INFO_4+INFO4
+                                            if len(INFO_5)<N8 and B!=1:
                                                 N1=0
                                                 B=0
                                         
