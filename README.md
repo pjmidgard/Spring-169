@@ -8,7 +8,7 @@ Divide by long bits start from 16836 and move 1 bias of 1 bit of bits of informa
 
 Maximum size 4GB that can compress.
 
-Compression Procent Maximum 99.9999990221%
+Compression Procent Maximum 99.9999997206%
 
 
 
