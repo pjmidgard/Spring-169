@@ -701,7 +701,7 @@ class compression:
                                     #print(len(jl))
                                     
                                     Times3+=1  
-                                    if len(INFO2)<=256 or Times3==((2**48)-1):
+                                    if len(INFO2)<=16 or Times3==((2**48)-1):
                                         #print(Bias2)
 
                                        
