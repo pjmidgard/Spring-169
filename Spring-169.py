@@ -669,7 +669,7 @@ class compression:
                                         C3="0"+str(7)+"b"
                                     
                                     INFO_4=format(N2,C3)
-                                    INFO4=Bias+INFO2[:N2]
+                                    INFO4=INFO2[:N2]+Bias
                                     
                                     INFO3=INFO4
 
