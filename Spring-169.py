@@ -667,15 +667,16 @@ class compression:
                                         N10_long=len(N9)
                                         C3="0"+str(7)+"b"
                                     
-                                    INFO_4=format(N2,C3)
-                                    INFO4=INFO2[:N2]+Bias
-                                    
-                                    INFO3=INFO4
+                                   
 
                                     
                                     
                                     
                                     if B==0:
+                                        INFO_4=format(N2,C3)
+                                        INFO4=INFO2[:N2]+Bias
+                                    
+                                        INFO3=INFO4
                                         INFO3=INFO_4+INFO3+"0"
                                     if B==1:
                                         INFO3=INFO2+"1"
