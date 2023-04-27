@@ -129,10 +129,7 @@ class compression:
                         
             
                   
-                        
-                        if long_file1>((2**32)-1)+((2**48)-1):
-                            print("This file is too big");
-                            raise SystemExit
+                    
                         if long_file1==0:
                             
                             raise SystemExit
