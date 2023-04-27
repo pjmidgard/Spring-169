@@ -615,7 +615,7 @@ class compression:
                                     N8=len(N10)
                                 
                                 
-                                    long_file14=(N8+1)
+                                    long_file14=16386
                                     while N1!=0:
                                         N2+=1
                                         long_file14-=1
@@ -643,10 +643,12 @@ class compression:
                                                 #print(N10_long)
                                             INFO_4=format(N2,C3)
                                             if len(INFO_4)>7:
-                                                raise SystemExit
-                                            INFO5=INFO4+INFO_4
-                                            if len(INFO5)<N8:
                                                 N1=0
+                                                B=1
+                                            INFO5=INFO4+INFO_4
+                                            if len(INFO5)<N8 and B!=1:
+                                                N1=0
+                                                B=0
                                         
                                     	#print(N2)
                                     Bias=bin(N5)[2:]
@@ -674,8 +676,14 @@ class compression:
                                     
                                     
                                     
+                                    if B==0:
+                                        INFO3=INFO_4+INFO3+"0"
+                                    if B==1:
+                                        INFO3=INFO2+"1"
 
-                                    INFO2=INFO_4+INFO3
+                                    INFO2=INFO3
+                                    #print(len(INFO3))
+                                        
                                     
                                     #n = int(INFO2, 2)
                                                                                                     
@@ -712,10 +720,9 @@ class compression:
                                         B1=format(long_file1,'032b')
                                         B5=format(Times3,'048b')
                                     
-                                        INFO3="1"+B1+B5+INFO3
+                                        INFO3=B1+B5+INFO3
                                         
-                                        INFO__3=int(INFO3,2)
-                                        INFO3=format(INFO__3,'0344b')
+                                       
                                         
                                     
                                     
