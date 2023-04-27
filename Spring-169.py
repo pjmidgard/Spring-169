@@ -269,18 +269,12 @@ class compression:
                                         INFO2=INFO2[7:]
                                         #print(INFO2)
                                         
-                                        if Multiply!=0:
-                                        	#print(Multiply)
-                                        	Multiply_N=int(INFO2[:Multiply],2)
-                                        	
-                                        else:
-                                        	
-                                        	Multiply=0
-                                        	Multiply_N=int(INFO2,2)
+                                     
+                                        Multiply_N=int(INFO2,2)
                                         Multiply_N=(16386-Multiply)*Multiply_N
 
                                         INFO_Save=bin(Multiply_N)[2:]
-                                        INFO3=INFO_Save+INFO2[Multiply:]
+                                        INFO3=INFO_Save
                                         
                                     
 
@@ -304,7 +298,7 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Long_file+1==len(INFO3):
+                                    if Times_compress+1==Times3:
 
                                        INFO3=INFO3[1:]
                                     
@@ -507,7 +501,7 @@ class compression:
                                     N8=len(N10)
                                 
                                 
-                                    long_file14=16386
+                                    long_file14=16387
                                     while N1!=0:
                                         N2+=1
                                         long_file14-=1
@@ -517,7 +511,7 @@ class compression:
                                             B=1
                                             N1=0
                                         if B==0:
-                                            N=int(INFO2[N2:],2)
+                                            N=int(INFO2,2)
                                             if N==0:
                                                 B=1
                                                 N1=0
@@ -526,7 +520,7 @@ class compression:
                                             	N5=N//long_file14
                                             	N_1=N%long_file14
                                             Bias=bin(N5)[2:]
-                                            INFO4=Bias+INFO2[:N2]
+                                            INFO4=Bias
                                             if Times3==0:
                                                 
                                                 N10=bin(N8)[2:]
@@ -551,7 +545,7 @@ class compression:
                                     long61=len(Bias)
                                     long62=0
                                     if B==0:
-                                    	long62=len(INFO2[:N2])
+                                    	long62=len(INFO2)
                                     NS=long61
                                     NS1=N8-long62
                                     NS2=NS1-1-long61
@@ -569,7 +563,8 @@ class compression:
                                     
                                     if B==0:
                                         INFO_4=format(N2,C3)
-                                        INFO4=INFO2[:N2]+Bias
+                                        #print(len(INFO_4))
+                                        INFO4=Bias
                                     
                                         INFO3=INFO4
                                         INFO3=INFO_4+INFO3+"0"
