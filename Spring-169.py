@@ -265,13 +265,13 @@ class compression:
                                     elif INFO2_take_1[long_file2-1:long_file2]=="0":
                                         INFO2=INFO2[:long_file2-1]
                                         long_file3=len(INFO2)
-                                        Multiply=int(INFO2[:7],2)
-                                        INFO2=INFO2[7:]
+                                        
+                                        INFO2=INFO2
                                         #print(INFO2)
                                         
                                      
                                         Multiply_N=int(INFO2,2)
-                                        Multiply_N=(16386-Multiply)*Multiply_N
+                                        Multiply_N=(16386)*Multiply_N
 
                                         INFO_Save=bin(Multiply_N)[2:]
                                         INFO3=INFO_Save
@@ -298,7 +298,7 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Times_compress+1==Times3:
+                                    if Times_compress==Times3:
 
                                        INFO3=INFO3[1:]
                                     
@@ -331,7 +331,7 @@ class compression:
                
                                         n = int(INFO3, 2)
                                         binary_to_data=len(INFO3)
-                                        binary_to_data=Long_file*2
+                                        binary_to_data=(binary_to_data/8)*2
                                         binary_to_data=str(binary_to_data)
                                         binary_to_data="%0"+binary_to_data+"x"
                                         jl=binascii.unhexlify(binary_to_data % n)
@@ -500,10 +500,10 @@ class compression:
                                     
                                 
                                 
-                                    long_file14=16387
+                                    long_file14=16386
                                     while N1!=0:
                                         N2+=1
-                                        long_file14-=1
+                                        long_file14
                                         long=len(INFO2)
                                         long2=long-N2
                                         if long2<=0:
@@ -566,7 +566,7 @@ class compression:
                                         INFO4=Bias
                                     
                                         INFO3=INFO4
-                                        INFO3=INFO_4+INFO3+"0"
+                                        INFO3=INFO3+"0"
                                     if B==1:
                                         INFO3=INFO2+"1"
 
