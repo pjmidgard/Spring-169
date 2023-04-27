@@ -626,8 +626,10 @@ class compression:
                                             if N==0:
                                                 B=1
                                                 N1=0
-                                            N5=N//long_file14
-                                            N_1=N%long_file14
+                                            if long_file14>0:
+
+                                            	N5=N//long_file14
+                                            	N_1=N%long_file14
                                             Bias=bin(N5)[2:]
                                             INFO4=Bias+INFO2[:N2]
                                             if Times3==0:
