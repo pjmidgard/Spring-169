@@ -67,6 +67,7 @@ class compression:
                     Times_change_info1=0
                     s=""
                     c=2
+                    R=0
                     
                     
                     count4=-1
@@ -212,6 +213,7 @@ class compression:
 
                                     
                                     INFO2=INFO
+                                    INFO__2=INFO2
 
                                     long_file3=len(INFO2)
                                 long_file2=len(INFO2)
@@ -229,6 +231,14 @@ class compression:
                                             Start_file=INFO2[32:]
                                             size_data3=INFO2[32:]
                                             
+                                            if size_data3[0:1]=="0":
+                                            	R=1
+
+                                            else:
+                                           	 R=0
+                                            Start_file=Start_file[1:]
+                                            size_data3=size_data3[1:]   
+                                            
                                             while size_data3[0:1]!="1":
                                                 if size_data3[0:1]=="0":
                                                     Start_file=Start_file[1:]
@@ -236,8 +246,10 @@ class compression:
                                                     
                                                     
                                              
-                                            INFO2=Start_file[1:]
-                                            #print(INFO2)
+                                            Start_file=Start_file[1:]
+                                         
+                                            	
+                                        #print(INFO2)
                                     	  
                                     
 
@@ -296,10 +308,12 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Times3==(2**50000):
+                                    if Times3==(2**50000) or R==1:
                                        #print(INFO3)
-
-                                       INFO3=INFO3
+                                       if R==0:
+                                       	INFO3=INFO3
+                                       if R==1:
+                                       	INFO3=INFO__2
                                     
                                        
                                        
@@ -374,7 +388,7 @@ class compression:
                         namem=""
                         namema="?"
                         
-                        R=1
+                        R=0
                        
                         
                         count3=0
@@ -473,7 +487,7 @@ class compression:
                                                 z=z+1
                                         INFO2=INFO
                                         long_file3=len(INFO2)
-                                        INFO2=INFO2
+                                        INFO__2=INFO2
                                     long_file2=len(INFO2)  
                                     block3=0
                                     INFO3=""
@@ -568,11 +582,11 @@ class compression:
                                         INFO3=INFO4
                                         INFO3=INFO3+MOD
                                     else:
-                                        raise SystemExit
+                                        R=1
                                    
 
                                     INFO2=INFO3
-                                    #print(len(INFO3))
+                                    #print(int(INFO3,2))
                                        
                                     
                                     #n = int(INFO2, 2)
@@ -591,12 +605,13 @@ class compression:
                                     #print(len(jl))
                                     
                                     Times3+=1  
-                                    if Times3==(2**50000):
+                                    if Times3==(2**50000) or R==1:
                                         #print(Bias2)
 
-                                       
-
-                                        INFO3="1"+INFO3
+                                        if R==1:
+                                        	INFO3="10"+INFO__2
+                                        else:
+                                        	INFO3="11"+INFO3
                                         long_file=len(INFO3)
                                         add_bits118=""
                                         count_bits=8-long_file%8
@@ -681,4 +696,3 @@ print(xw1)
 
 xw=d.cryptograpy_compression()
 print(xw)
-
