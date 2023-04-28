@@ -299,8 +299,9 @@ class compression:
                                     Times3+=1  
                                     #print(Times3)
                                     if Times_compress==Times3:
+                                       #print(INFO3)
 
-                                       INFO3=INFO3[1:]
+                                       INFO3=INFO3
                                     
                                        
                                        
@@ -331,7 +332,7 @@ class compression:
                
                                         n = int(INFO3, 2)
                                         binary_to_data=len(INFO3)
-                                        binary_to_data=(binary_to_data/8)*2
+                                        binary_to_data=Long_file*2
                                         binary_to_data=str(binary_to_data)
                                         binary_to_data="%0"+binary_to_data+"x"
                                         jl=binascii.unhexlify(binary_to_data % n)
@@ -474,7 +475,7 @@ class compression:
                                                 z=z+1
                                         INFO2=INFO
                                         long_file3=len(INFO2)
-                                        INFO2="1"+INFO2
+                                        INFO2=INFO2
                                     long_file2=len(INFO2)  
                                     block3=0
                                     INFO3=""
