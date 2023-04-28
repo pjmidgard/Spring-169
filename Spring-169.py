@@ -267,9 +267,9 @@ class compression:
                                         #print(INFO2)
                                         
                                      
-                                    Multiply_N=int(INFO2[:long_file3-14],2)
-                                    MOD=int(INFO2[long_file3-14:],2)
-                                    Multiply_N=((16386)*Multiply_N)+MOD
+                                    Multiply_N=int(INFO2[:long_file3-(Long_file-1)],2)
+                                    MOD=int(INFO2[long_file3-(Long_file-1):],2)
+                                    Multiply_N=((2**Long_file)*Multiply_N)+MOD
 
                                     INFO_Save=bin(Multiply_N)[2:]
                                     INFO3=INFO_Save
@@ -296,7 +296,7 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Times3==((2**(2**32))-1):
+                                    if Times3==(2**50000):
                                        #print(INFO3)
 
                                        INFO3=INFO3
@@ -499,7 +499,7 @@ class compression:
                                     
                                 
                                 
-                                    long_file14=16386
+                                    long_file14=2**long_file5
                                     while N1!=0:
                                         N2+=1
                                         long_file14
@@ -531,7 +531,7 @@ class compression:
                                            
                                             INFO_5=INFO4
                                             
-                                            if len(INFO_5)<N8 and B!=1 and N_1<16386:
+                                            if len(INFO_5)<N8 and B!=1 and N_1<2**long_file5-2:
                                                 N1=0
                                                 B=0
                                             
@@ -552,7 +552,7 @@ class compression:
                                     if Times3==0:
                                         N9=bin(N8)[2:]
                                         N10_long=len(N9)
-                                        C3="0"+str(14)+"b"
+                                        C3="0"+str(long_file5-1)+"b"
                                     
                                    
 
@@ -567,6 +567,8 @@ class compression:
                                     
                                         INFO3=INFO4
                                         INFO3=INFO3+MOD
+                                    else:
+                                        raise SystemExit
                                    
 
                                     INFO2=INFO3
@@ -589,7 +591,7 @@ class compression:
                                     #print(len(jl))
                                     
                                     Times3+=1  
-                                    if Times3==((2**(2**32))-1):
+                                    if Times3==(2**50000):
                                         #print(Bias2)
 
                                        
@@ -608,7 +610,7 @@ class compression:
                                         B1=format(long_file1,'032b')
                                         
                                     
-                                        INFO3=B1+B5+INFO3
+                                        INFO3=B1+INFO3
                                         
                                        
                                         
@@ -679,3 +681,4 @@ print(xw1)
 
 xw=d.cryptograpy_compression()
 print(xw)
+
