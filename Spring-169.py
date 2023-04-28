@@ -531,7 +531,7 @@ class compression:
                                                 #print(N10_long)
                                            
                                             INFO_5=INFO4
-                                            if len(INFO_5)<N8 and B!=1:
+                                            if len(INFO_5)<N8 and B!=1 and N_1==0:
                                                 N1=0
                                                 B=0
                                             else:
