@@ -545,7 +545,7 @@ class compression:
                                            
                                             INFO_5=INFO4
                                             
-                                            if len(INFO_5)<N8 and B!=1 and N_1<2**long_file5-2:
+                                            if len(INFO_5)<N8 and B!=1 and N_1<2**long_file5:
                                                 N1=0
                                                 B=0
                                             
