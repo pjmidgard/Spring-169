@@ -579,12 +579,12 @@ class compression:
                                         long=len(INFO2)
                                         long2=long-N2
                                         if long2<=0:
-                                            B=1
+                                            B=0
                                             N1=0
                                         if B==0:
                                             N=int(INFO2,2)
                                             if N==0:
-                                                B=1
+                                                B=0
                                                 N1=0
                                             if long_file14>0:
 
@@ -604,7 +604,7 @@ class compression:
                                            
                                             INFO_5=INFO4
                                             
-                                            if len(INFO_5)<N8 and B!=1 and N_1<2:
+                                            if N_1<2:
                                                 N1=0
                                                 B=0
                                             
