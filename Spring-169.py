@@ -324,7 +324,7 @@ class compression:
                                   
                                     
                                               
-                                    print(len(INFO2))
+                                    #print(len(INFO2))
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -344,9 +344,7 @@ class compression:
                                     #print(Times3)
                                     if Times3==Times_compress:
                                        #print(INFO3)
-                                       INFO3=INFO3
-                             
-                                    
+    
                                        
                                        
                                        Times3=0
@@ -524,20 +522,28 @@ class compression:
                                     INFO3=""
                                     
                                     Minus=int(INFO2,2)
-                                    N1=Minus%4
-                                    Minus=Minus//4
+                                    N1=Minus%8
+                                    Minus=Minus//8
                                   
                                   
                                
-                                    C="0"+str(str(long_file2-(long_file2-2)))+"b"
+                                    C="0"+str(str(long_file2-(long_file2-3)))+"b"
                                     INFO_2=format(Minus,C)
-                                    Cr="0"+str(long_file2//8)+"b"
+                                    
+                                    Cr="0"+str(2)+"b"
                                     #print(len(INFO_2))
                                     Mod=bin(N1)[2:]
+                                   
                                     #print(len(Mod))
                                     INFO6=""#
                                     INFO6=INFO_2+Mod
+                                    while len(INFO6)!=len(INFO2):
+                                    	INFO6="0"+INFO6
+                             
+                                  
+                                
                                     INFO2=INFO6
+
                                 
                                     #print(len(INFO6))
                                     
@@ -556,7 +562,7 @@ class compression:
                                     #print(len(INFO3))
                                     
                                     #Reverse
-                                    block3=0
+                                    block3=Times3
                                     long_3=len(INFO3)
                                  
                                     INFO4=""
@@ -570,11 +576,11 @@ class compression:
                                     	elif INFO_3=="1":
                                     		INFO4+="0"
                                     	block3+=1
-                              
-                                     								                         
+                                    
+                                    INFO4=INFO3[:Times3]+INFO4[Times3:]
                                     INFO2=INFO4
                                     INFO3=INFO4
-                                    #print(len(INFO2))
+                                    #print(INFO2)
                                        
                                     
                                     #n = int(INFO2, 2)
@@ -594,31 +600,27 @@ class compression:
                                     #print(Times3)
                                     
                                     Times3+=1  
-                                    if len(INFO3)<=256 or Times3==(2**48)-1:
+                                    if Times3==long_file1*2:
                                         #print(Bias2)
+                                        
+                                   
 
                                         
-                                        INFO3="1"+INFO3
-                                      
-                                        long_file=len(INFO3)
-                                        add_bits118=""
-                                        count_bits=8-long_file%8
-                                        z=0
-                                        if count_bits!=8:
-                                            while z<count_bits:
-                                                add_bits118="0"+add_bits118
-                                                z=z+1
-                                        INFO3=add_bits118+INFO3
-                                        Times=1
-                                        B1=format(long_file1,'032b')
-                                        B5=format(Times3,'048b')
-                                        
-                                    
-                                        INFO3=B1+B5+INFO3         #print(Bias2)
+                                     
+     #print(Bias2)
                                         Times=1
                                     #print(Times)
                                     if Times==1:
-                                        
+                                       Start_file=INFO3
+                                       size_data3=INFO3
+                                       while size_data3[0:1]!="1":
+                                                if size_data3[0:1]=="0":
+                                                    Start_file=Start_file[1:]
+                                                    size_data3=size_data3[1:]
+                                                    B1=format(long_file1,'032b')
+                                                    INFO3=B1+Start_file
+                             
+                                                                        
 
                                         
                                         
