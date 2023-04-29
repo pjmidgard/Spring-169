@@ -213,7 +213,7 @@ class compression:
 
                                     
                                     INFO2=INFO
-                                    INFO__2=INFO2
+                                 
 
                                     long_file3=len(INFO2)
                                 long_file2=len(INFO2)
@@ -242,6 +242,7 @@ class compression:
                                                     
                                              
                                             Start_file=Start_file[1:]
+                                            INFO2=Start_file
                                          
                                             	
                                         #print(INFO2)
@@ -266,12 +267,15 @@ class compression:
                                     long_file2=len(INFO2)
                                     #print(INFO2)
                                     
-                                 
+
+                              
+                                     								                          
+                                                             
                                     
+                                  
+                                    
+                                    #Multiply
                                     long_file3=len(INFO2)
-                                        
-                                   
-                                        #print(INFO2)
                                         
                                      
                                     Multiply_N=int(INFO2[:long_file3-1],2)
@@ -285,6 +289,38 @@ class compression:
 
                                     
                                     INFO2=INFO3
+                                    
+                                    #Reverse
+                                    INFO3=INFO2
+                                    long_file3=len(INFO2)
+                                        
+                                    block3=0
+                                    long_3=len(INFO3)
+                                 
+                                    INFO4=""
+                                    INFO_3=""
+                                    
+                                    while block3<long_3:
+                                    	INFO_3=INFO3[block3:block3+1]
+                                    	
+                                    	if INFO_3=="0":
+                                    		INFO4+="1"
+                                    	elif INFO_3=="1":
+                                    		INFO4+="0"
+                                    	block3+=1
+                                    	
+                                    INFO2=INFO4
+                                    INFO3=""
+                                    long_file2=len(INFO2) 
+                                    #Huffman
+                                    if INFO2[long_file2-2:long_file2]=="00":
+                                    	INFO3=INFO2[:long_file2-1]+"0"
+                                    elif INFO2[long_file2-2:long_file2]=="10":
+                                    	INFO3=INFO2[:long_file2-2]+"01"
+                                    elif INFO2[long_file2-1:long_file2]=="1":
+                                    	INFO3=INFO2[:long_file2-1]+"11"
+                                    INFO2=INFO3
+          
                                     #print(len(INFO3))
                                     #n = int(INFO2, 2)
                                                                                                     
