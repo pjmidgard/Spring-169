@@ -516,7 +516,7 @@ class compression:
                                                 z=z+1
                                         INFO2=INFO
                                         long_file3=len(INFO2)
-                                        INFO__2=INFO2
+                                      
                                     long_file2=len(INFO2)  
                                     INFO3=""
                                    
