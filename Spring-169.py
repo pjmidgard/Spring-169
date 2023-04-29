@@ -221,6 +221,7 @@ class compression:
                                 
                                 
                                 Long_file=int(INFO2[0:32],2)
+                                Times_compress=int(INFO2[32:80],2)
                                 
                                 Times_F=0
                                 #print(Long_file)
@@ -228,16 +229,10 @@ class compression:
                                 
                                 while Times_F!=1:
                                     if Times3==0:
-                                            Start_file=INFO2[32:]
-                                            size_data3=INFO2[32:]
+                                            Start_file=INFO2[80:]
+                                            size_data3=INFO2[80:]
                                             
-                                            if size_data3[0:1]=="0":
-                                            	R=1
-
-                                            else:
-                                           	 R=0
-                                            Start_file=Start_file[1:]
-                                            size_data3=size_data3[1:]   
+          
                                             
                                             while size_data3[0:1]!="1":
                                                 if size_data3[0:1]=="0":
@@ -275,13 +270,13 @@ class compression:
                                     
                                     long_file3=len(INFO2)
                                         
-                                    INFO2=INFO2
+                                   
                                         #print(INFO2)
                                         
                                      
-                                    Multiply_N=int(INFO2[:long_file3-(Long_file-1)],2)
-                                    MOD=int(INFO2[long_file3-(Long_file-1):],2)
-                                    Multiply_N=((2**Long_file)*Multiply_N)+MOD
+                                    Multiply_N=int(INFO2[:long_file3-1],2)
+                                    MOD=int(INFO2[long_file3-1:],2)
+                                    Multiply_N=((2)*Multiply_N)+MOD
 
                                     INFO_Save=bin(Multiply_N)[2:]
                                     INFO3=INFO_Save
@@ -308,12 +303,10 @@ class compression:
                                     
                                     Times3+=1  
                                     #print(Times3)
-                                    if Times3==(2**50000) or R==1:
+                                    if Times3==Times_compress:
                                        #print(INFO3)
-                                       if R==0:
-                                       	INFO3=INFO3
-                                       if R==1:
-                                       	INFO3=INFO__2
+                                       INFO3=INFO3
+                             
                                     
                                        
                                        
@@ -489,6 +482,36 @@ class compression:
                                         long_file3=len(INFO2)
                                         INFO__2=INFO2
                                     long_file2=len(INFO2)  
+                                    INFO3=""
+                                    #Huffman
+                                    if INFO2[long_file2-1:long_file2]=="0":
+                                    	INFO3=INFO2[:long_file2-1]+"00"
+                                    elif INFO2[long_file2-2:long_file2]=="01":
+                                    	INFO3=INFO2[:long_file2-2]+"10"
+                                    elif INFO2[long_file2-2:long_file2]=="11":
+                                    	INFO3=INFO2[:long_file2-2]+"1"
+                                    
+                                    
+                                    #Reverse
+                                    block3=0
+                                    long_3=len(INFO3)
+                                 
+                                    INFO4=""
+                                    INFO_3=""
+                                    
+                                    while block3<long_3:
+                                    	INFO_3=INFO3[block3:block3+1]
+                                    	
+                                    	if INFO_3=="0":
+                                    		INFO4+="1"
+                                    	elif INFO_3=="1":
+                                    		INFO4+="0"
+                                    	block3+=1
+                              
+                                     								                          
+                                    INFO2=INFO4
+                                    #print(INFO4)
+                                    #Divide
                                     block3=0
                                     INFO3=""
                                     INFO5=""
@@ -513,7 +536,7 @@ class compression:
                                     
                                 
                                 
-                                    long_file14=2**long_file5
+                                    long_file14=2
                                     while N1!=0:
                                         N2+=1
                                         long_file14
@@ -545,7 +568,7 @@ class compression:
                                            
                                             INFO_5=INFO4
                                             
-                                            if len(INFO_5)<N8 and B!=1 and N_1<2**long_file5:
+                                            if len(INFO_5)<N8 and B!=1 and N_1<2:
                                                 N1=0
                                                 B=0
                                             
@@ -566,7 +589,7 @@ class compression:
                                     if Times3==0:
                                         N9=bin(N8)[2:]
                                         N10_long=len(N9)
-                                        C3="0"+str(long_file5-1)+"b"
+                                        C3="0"+str(1)+"b"
                                     
                                    
 
@@ -578,15 +601,12 @@ class compression:
                                       
                                         #print(len(MOD))
                                         INFO4=Bias
+                                        #print(Bias)
                                     
                                         INFO3=INFO4
                                         INFO3=INFO3+MOD
-                                    else:
-                                        R=1
-                                   
-
                                     INFO2=INFO3
-                                    #print(int(INFO3,2))
+                                    #print(len(INFO2))
                                        
                                     
                                     #n = int(INFO2, 2)
@@ -605,13 +625,12 @@ class compression:
                                     #print(len(jl))
                                     
                                     Times3+=1  
-                                    if Times3==(2**50000) or R==1:
+                                    if len(INFO3)<=256 or Times3==(2**48)-1:
                                         #print(Bias2)
 
-                                        if R==1:
-                                        	INFO3="10"+INFO__2
-                                        else:
-                                        	INFO3="11"+INFO3
+                                        
+                                        INFO3="1"+INFO3
+                                      
                                         long_file=len(INFO3)
                                         add_bits118=""
                                         count_bits=8-long_file%8
@@ -623,9 +642,10 @@ class compression:
                                         INFO3=add_bits118+INFO3
                                         Times=1
                                         B1=format(long_file1,'032b')
+                                        B5=format(Times3,'048b')
                                         
                                     
-                                        INFO3=B1+INFO3
+                                        INFO3=B1+B5+INFO3
                                         
                                        
                                         
