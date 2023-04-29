@@ -314,7 +314,7 @@ class compression:
                                     long_file2=len(INFO2) 
                                     #Huffman
                                     if INFO2[long_file2-2:long_file2]=="00":
-                                    	INFO3=INFO2[:long_file2-1]+"0"
+                                    	INFO3=INFO2[:long_file2-2]+"0"
                                     elif INFO2[long_file2-2:long_file2]=="10":
                                     	INFO3=INFO2[:long_file2-2]+"01"
                                     elif INFO2[long_file2-1:long_file2]=="1":
