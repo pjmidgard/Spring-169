@@ -302,27 +302,29 @@ class compression:
                                     INFO2=INFO4
                                     INFO3=""
                                     long_file2=len(INFO2) 
+                                    print(long_file2)
                                     #Huffman
                                     if INFO2[long_file2-2:long_file2]=="00":
-                                    	INFO3=INFO2[:long_file2-1]+"0"
+                                    	INFO3=INFO2[:long_file2-2]+"10"
                                     elif INFO2[long_file2-2:long_file2]=="10":
                                     	INFO3=INFO2[:long_file2-2]+"01"
-                                    elif INFO2[long_file2-1:long_file2]=="1":
-                                    	INFO3=INFO2[:long_file2-1]+"11"
-                                    INFO2=INFO3
+                                    elif INFO2[long_file2-2:long_file2]=="01":
+                                    	INFO3=INFO2[:long_file2-2]+"11"
+                                    elif INFO2[long_file2-2:long_file2]=="11":
+                                    	INFO3=INFO2[:long_file2-2]+"00"      
                                     
                                     long_5=len(INFO2)
                                     Mod=int(INFO2[long_5-1:],2)
                                     Minus=int(INFO2[:long_5-1],2)
-                                    N1=Minus%2
+                                 
                                     Minus=(Minus*2)+Mod
                                     
-                                    C="0"+str(long_5)+"b"
-                                    INFO2=format(Minus,C)
+                                  
+                                    INFO2=bin(Minus)[2:]
                                   
                                     
                                               
-                                    #print(len(INFO3))
+                                    print(len(INFO2))
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -522,24 +524,36 @@ class compression:
                                     INFO3=""
                                     
                                     Minus=int(INFO2,2)
-                                    N1=Minus%2
-                                    Minus-=Minus//2
-                                    
-                                    C="0"+str(long_file2-1)+"b"
-                                    INFO2=format(Minus,C)
+                                    N1=Minus%4
+                                    Minus=Minus//4
+                                  
+                                  
+                               
+                                    C="0"+str(str(long_file2-(long_file2-2)))+"b"
+                                    INFO_2=format(Minus,C)
+                                    Cr="0"+str(long_file2//8)+"b"
+                                    #print(len(INFO_2))
                                     Mod=bin(N1)[2:]
-                                    INFO2+=Mod
-                                    #print(len(INFO2))
+                                    #print(len(Mod))
+                                    INFO6=""#
+                                    INFO6=INFO_2+Mod
+                                    INFO2=INFO6
+                                
+                                    #print(len(INFO6))
                                     
+                                    
+                                    long_file2=len(INFO6)
                                    
                                     #Huffman
-                                    if INFO2[long_file2-1:long_file2]=="0":
+                                    if INFO2[long_file2-2:long_file2]=="10":
                                     	INFO3=INFO2[:long_file2-2]+"00"
                                     elif INFO2[long_file2-2:long_file2]=="01":
                                     	INFO3=INFO2[:long_file2-2]+"10"
                                     elif INFO2[long_file2-2:long_file2]=="11":
-                                    	INFO3=INFO2[:long_file2-2]+"1"
-                                    
+                                    	INFO3=INFO2[:long_file2-2]+"01"
+                                    elif INFO2[long_file2-2:long_file2]=="00":
+                                    	INFO3=INFO2[:long_file2-2]+"11"                                     
+                                    #print(len(INFO3))
                                     
                                     #Reverse
                                     block3=0
@@ -559,6 +573,7 @@ class compression:
                               
                                      								                         
                                     INFO2=INFO4
+                                    INFO3=INFO4
                                     #print(len(INFO2))
                                        
                                     
@@ -576,6 +591,7 @@ class compression:
                                     #
                                     #
                                     #print(len(jl))
+                                    #print(Times3)
                                     
                                     Times3+=1  
                                     if len(INFO3)<=256 or Times3==(2**48)-1:
@@ -598,12 +614,8 @@ class compression:
                                         B5=format(Times3,'048b')
                                         
                                     
-                                        INFO3=B1+B5+INFO3
-                                        
-                                       
-                                        
-                                    
-                                    
+                                        INFO3=B1+B5+INFO3         #print(Bias2)
+                                        Times=1
                                     #print(Times)
                                     if Times==1:
                                         
