@@ -519,6 +519,7 @@ class compression:
                                         INFO__2=INFO2
                                     long_file2=len(INFO2)  
                                     INFO3=""
+                                   
                                     #Huffman
                                     if INFO2[long_file2-1:long_file2]=="0":
                                     	INFO3=INFO2[:long_file2-1]+"00"
