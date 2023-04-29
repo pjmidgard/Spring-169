@@ -322,7 +322,7 @@ class compression:
                                   
                                     
                                               
-                                    print(len(INFO3))
+                                    #print(len(INFO3))
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -559,7 +559,7 @@ class compression:
                               
                                      								                         
                                     INFO2=INFO4
-                                    print(len(INFO2))
+                                    #print(len(INFO2))
                                        
                                     
                                     #n = int(INFO2, 2)
