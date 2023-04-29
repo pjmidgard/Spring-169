@@ -273,22 +273,12 @@ class compression:
                                                              
                                     
                                   
-                                    
-                                    #Multiply
-                                    long_file3=len(INFO2)
-                                        
-                                     
-                                    Multiply_N=int(INFO2[:long_file3-1],2)
-                                    MOD=int(INFO2[long_file3-1:],2)
-                                    Multiply_N=((2)*Multiply_N)+MOD
-
-                                    INFO_Save=bin(Multiply_N)[2:]
-                                    INFO3=INFO_Save
+ 
                                         
                                     
 
                                     
-                                    INFO2=INFO3
+                                  
                                     
                                     #Reverse
                                     INFO3=INFO2
@@ -314,14 +304,25 @@ class compression:
                                     long_file2=len(INFO2) 
                                     #Huffman
                                     if INFO2[long_file2-2:long_file2]=="00":
-                                    	INFO3=INFO2[:long_file2-2]+"0"
+                                    	INFO3=INFO2[:long_file2-1]+"0"
                                     elif INFO2[long_file2-2:long_file2]=="10":
                                     	INFO3=INFO2[:long_file2-2]+"01"
                                     elif INFO2[long_file2-1:long_file2]=="1":
                                     	INFO3=INFO2[:long_file2-1]+"11"
                                     INFO2=INFO3
-          
-                                    #print(len(INFO3))
+                                    
+                                    long_5=len(INFO2)
+                                    Mod=int(INFO2[long_5-1:],2)
+                                    Minus=int(INFO2[:long_5-1],2)
+                                    N1=Minus%2
+                                    Minus=(Minus*2)+Mod
+                                    
+                                    C="0"+str(long_5)+"b"
+                                    INFO2=format(Minus,C)
+                                  
+                                    
+                                              
+                                    print(len(INFO3))
                                     #n = int(INFO2, 2)
                                                                                                     
                                             
@@ -519,10 +520,21 @@ class compression:
                                       
                                     long_file2=len(INFO2)  
                                     INFO3=""
+                                    
+                                    Minus=int(INFO2,2)
+                                    N1=Minus%2
+                                    Minus-=Minus//2
+                                    
+                                    C="0"+str(long_file2-1)+"b"
+                                    INFO2=format(Minus,C)
+                                    Mod=bin(N1)[2:]
+                                    INFO2+=Mod
+                                    #print(len(INFO2))
+                                    
                                    
                                     #Huffman
                                     if INFO2[long_file2-1:long_file2]=="0":
-                                    	INFO3=INFO2[:long_file2-1]+"00"
+                                    	INFO3=INFO2[:long_file2-2]+"00"
                                     elif INFO2[long_file2-2:long_file2]=="01":
                                     	INFO3=INFO2[:long_file2-2]+"10"
                                     elif INFO2[long_file2-2:long_file2]=="11":
@@ -545,105 +557,9 @@ class compression:
                                     		INFO4+="0"
                                     	block3+=1
                               
-                                     								                          
+                                     								                         
                                     INFO2=INFO4
-                                    #print(INFO4)
-                                    #Divide
-                                    block3=0
-                                    INFO3=""
-                                    INFO5=""
-                                    INFO8=""
-                                    INFO4=""
-                                    
-                                    count3+=1
-                                    #print(count4)
-                                    #######################################################Jurijus Pacalovas Exection Program######################################################################################
-                                    #print(len(INFO2))
-                                    F=0
-                                    B=0
-                                    count4=-1
-                                    
-                                    long_file2=len(INFO2)
-                                    #print(long_file2)
-                                    N2=-1
-                                    N1=1
-                                    N5=0
-                                    long2=1
-                                    N8=int(INFO2,2)
-                                    
-                                
-                                
-                                    long_file14=2
-                                    while N1!=0:
-                                        N2+=1
-                                        long_file14
-                                        long=len(INFO2)
-                                        long2=long-N2
-                                        if long2<=0:
-                                            B=0
-                                            N1=0
-                                        if B==0:
-                                            N=int(INFO2,2)
-                                            if N==0:
-                                                B=0
-                                                N1=0
-                                            if long_file14>0:
-
-                                            	N5=N//long_file14
-                                            	N_1=N%long_file14
-                                            Bias=bin(N5)[2:]
-                                            INFO4=Bias
-                                            if Times3==0:
-                                                
-                                                N10=bin(N8)[2:]
-                                            
-                                                N10_long=len(N10)
-                                                
-                                                C3="0"+str(7)+"b"
-                                                #print(N10_long)
-                                                
-                                           
-                                            INFO_5=INFO4
-                                            
-                                            if N_1<2:
-                                                N1=0
-                                                B=0
-                                            
-                                        
-                                    	#print(N2)
-                                    Bias=bin(N5)[2:]
-                                    if N5==0:
-                                    	B=1
-                                    long61=len(Bias)
-                                    long62=0
-                                    if B==0:
-                                    	long62=len(INFO2)
-                                    NS=long61
-                                    NS1=N8-long62
-                                    NS2=NS1-1-long61
-                                    Nj=len(bin(N2)[2:])
-                                    #print(N2)
-                                    if Times3==0:
-                                        N9=bin(N8)[2:]
-                                        N10_long=len(N9)
-                                        C3="0"+str(1)+"b"
-                                    
-                                   
-
-                                    
-                                    
-                                    
-                                    if B==0:
-                                        MOD=format(N_1,C3)
-                                      
-                                        #print(len(MOD))
-                                        INFO4=Bias
-                                        #print(Bias)
-                                    
-                                        INFO3=INFO4
-                                        INFO3=INFO3+MOD
-                                    INFO2=INFO3
-                                    #print(len(INFO2))
+                                    print(len(INFO2))
                                        
                                     
                                     #n = int(INFO2, 2)
