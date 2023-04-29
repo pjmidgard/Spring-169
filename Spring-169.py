@@ -619,9 +619,16 @@ class compression:
                                                     size_data3=size_data3[1:]
                                                     B1=format(long_file1,'032b')
                                                     INFO3=B1+Start_file
-                             
-                                                                        
-
+                                     
+                                      
+                                       n = int(INFO3, 2)
+                                       binary_to_data=len(INFO3)
+                                       binary_to_data=(binary_to_data/8)*2
+                                       binary_to_data=str(binary_to_data)
+                                       binary_to_data="%0"+binary_to_data+"x"
+                                       jl=binascii.unhexlify(binary_to_data % n)
+                                       Times1=1 
+                                       if Times1==1:
                                         
                                         
                                         
@@ -634,24 +641,19 @@ class compression:
                                         
                                             
                
-                                        n = int(INFO3, 2)
-                                        binary_to_data=len(INFO3)
-                                        binary_to_data=(binary_to_data/8)*2
-                                        binary_to_data=str(binary_to_data)
-                                        binary_to_data="%0"+binary_to_data+"x"
-                                        jl=binascii.unhexlify(binary_to_data % n)
+
                                         #
                                         #
                                         #print(len(jl))
                                             
                                       
-                                        Times1=1
+                                        
                                      
                                             
                                             
                                             #print(Times1)
                                             
-                                        if Times1==1:
+                                       
                                         
                                                 Times_Finish=10
                                                 if Times_Finish==10:
