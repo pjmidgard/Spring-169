@@ -529,7 +529,7 @@ class compression:
                                         N8=0
                                         N9=0
                                       
-                                    
+                                    N-=1
                                     N2=N                                 
                                     N=N//2
                                     N1=N%2
@@ -544,16 +544,16 @@ class compression:
                                     	if N3==0:
                                     		N=N
                                     		if N9==1 and N6==0:
-                                    			N=N4-1#//2//!2
+                                    			N=N4#//2//!2
                                     			
                                     		else:
-                                    			N=N2-1#//2//2
+                                    			N=N2#//2//2
                                     		
                                     	else:
-                                    		N=N2-1#//2
+                                    		N=N2#//2
                                     		N=-N
                                     else:
-                                    	N=N2-1#//!2
+                                    	N=N2#//!2
 
                                     #print(N)
                                     Times3+=1  
