@@ -522,22 +522,39 @@ class compression:
                                         N2=0
                                         N3=0
                                         N1=0
+                                        N4=0
+                                        N5=0
+                                        N6=0
+                                        N7=0
+                                        N8=0
+                                        N9=0
                                       
                                    
-                                    N2=N
-                                  
+                                    N2=N                                 
                                     N=N//2
                                     N1=N%2
                                     if N1==0:
                                     	N3=N%2
+                                    	N5=N
+                                    	N4=N//2
+                                    	N6=N4%2
+                                    	N8=N4//2
+                                
+                                    	N9=N8%2
                                     	if N3==0:
-                                    		N=N-1#//2//2//!2
+                                    		N=N
+                                    		if N9==1 and N6==0:
+                                    			N=N4-1#//2//!2
+                                    			
+                                    		else:
+                                    			N=N2-1#//2//2
+                                    		
                                     	else:
-                                    		N=N2-1#//2//!2//2
+                                    		N=N2-1#//2
                                     else:
-                                    	N=N2-1#//2
+                                    	N=N2-1#//!2
 
-                                    
+                                    #print(N)
                                     Times3+=1  
                                     if N<=(2**256)-1 or Times3==(2**48)-1:
                                         #print(Bias2)
