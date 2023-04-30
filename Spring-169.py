@@ -529,7 +529,7 @@ class compression:
                                         N8=0
                                         N9=0
                                       
-                                   
+                                    
                                     N2=N                                 
                                     N=N//2
                                     N1=N%2
@@ -551,12 +551,13 @@ class compression:
                                     		
                                     	else:
                                     		N=N2-1#//2
+                                    		N=-N
                                     else:
                                     	N=N2-1#//!2
 
                                     #print(N)
                                     Times3+=1  
-                                    if N<=(2**256)-1 or Times3==(2**48)-1:
+                                    if N>-1 and N<=(2**256)-1 or Times3==(2**48)-1:
                                         #print(Bias2)
                                         INFO3=bin(N)[2:]
 
