@@ -530,11 +530,11 @@ class compression:
                                     if N1==0:
                                     	N3=N%2
                                     	if N3==0:
-                                    		N=N-1
+                                    		N=N-1//#//2//2
                                     	else:
-                                    		N=N2-1
+                                    		N=N2-1#//2//!2
                                     else:
-                                    	N=N2-1
+                                    	N=N2-1#//!2
 
                                     
                                     Times3+=1  
