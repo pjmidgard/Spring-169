@@ -563,14 +563,20 @@ class compression:
                                     Times3+=1  
                                     if N>-1 and N<=(2**256)-1 or Times3==(2**48)-1:
                                         #print(Bias2)
-                                        INFO3=bin(N)[2:]
+                                        if N>-1:
+                                        	INFO3=bin(N)[2:]
+                                        	INFO3="10"+INFO3
+                                        else:
+                                        	N=-N
+                                        	INFO3=bin(N)[2:]
+                                        	INFO3="11"+INFO3
 
                                         Times=1
                                     #print(Times)
                                     if Times==1:
                                        B5=format(Times3,'048b')
                                        B1=format(long_file1,'032b')
-                                       INFO3="1"+INFO3
+                                       
                                        long_file=len(INFO3)
                                        add_bits118=""
                                        count_bits=8-long_file%8
