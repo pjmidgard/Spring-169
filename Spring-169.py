@@ -532,15 +532,14 @@ class compression:
                                    
                                       
                                     N=-N
-                                  
                                     N2=N                                 
                                     N=N//2
                                     N1=N%2
-                                    if N==0 or N==-0:
+                                    if N==0:
                                     	N=0
-                                    elif N<0:
-                                    	N8=1
-                                    elif N>-1:
+                                    elif N<0 and N!=0:
+                                    	N7=1
+                                    elif N>-1 and N!=0:
 	                                    if N1==0:
 	                                    	N3=N%2
 	                                    	N5=N
@@ -560,7 +559,7 @@ class compression:
 	                                    	else:
 	                                    		N=N2-1#//2
 	                                    		N=-N
-	                                    		N8=0
+	                                    		N7=0
 	                                    else:
 	                                    	N=N2-1#//!2
 
@@ -574,7 +573,7 @@ class compression:
                                         else:
                                         	N=-N
                                         	INFO3=bin(N)[2:]
-                                        	if N8==1:
+                                        	if N7==1:
                                         		INFO3="110"+INFO3
                                         	else:
                                         		INFO3="111"+INFO3
