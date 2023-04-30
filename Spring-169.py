@@ -529,6 +529,7 @@ class compression:
                                         N8=0
                                         N9=0
                                         
+                                        
                                    
                                       
                                     N=-N
@@ -536,7 +537,8 @@ class compression:
                                     N2=N
                                     if N>-1 and N!=0:                   
                                     	N=N//2
-                                    	N1=N%2
+                                   
+                                    	N1=N2%2
                                     if N==0:
                                     	N=0
                                     elif N<0 and N!=0:
