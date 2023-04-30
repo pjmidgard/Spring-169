@@ -536,7 +536,11 @@ class compression:
                                     N2=N                                 
                                     N=N//2
                                     N1=N%2
-                                    if N>-1:
+                                    if N==0 or N==-0:
+                                    	N=0
+                                    elif N<0:
+                                    	N8=1
+                                    elif N>-1:
 	                                    if N1==0:
 	                                    	N3=N%2
 	                                    	N5=N
@@ -556,6 +560,7 @@ class compression:
 	                                    	else:
 	                                    		N=N2-1#//2
 	                                    		N=-N
+	                                    		N8=0
 	                                    else:
 	                                    	N=N2-1#//!2
 
@@ -569,7 +574,10 @@ class compression:
                                         else:
                                         	N=-N
                                         	INFO3=bin(N)[2:]
-                                        	INFO3="11"+INFO3
+                                        	if N8==1:
+                                        		INFO3="110"+INFO3
+                                        	else:
+                                        		INFO3="111"+INFO3
 
                                         Times=1
                                     #print(Times)
