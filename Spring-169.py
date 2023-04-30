@@ -515,110 +515,49 @@ class compression:
                                             while z<xc:
                                                 INFO="0"+INFO
                                                 z=z+1
-                                        INFO2=INFO
+                                        INFO2="1"+INFO
                                         long_file3=len(INFO2)
+                                        
+                                        N=int(INFO2,2)
+                                        N2=0
+                                        N3=0
+                                        N1=0
                                       
-                                    long_file2=len(INFO2)  
-                                    INFO3=""
-                                    
-                                    Minus=int(INFO2,2)
-                                    N1=Minus%8
-                                    Minus=Minus//8
-                                  
-                                  
-                               
-                                    C="0"+str(str(long_file2-(long_file2-3)))+"b"
-                                    INFO_2=format(Minus,C)
-                                    
-                                    Cr="0"+str(2)+"b"
-                                    #print(len(INFO_2))
-                                    Mod=bin(N1)[2:]
                                    
-                                    #print(len(Mod))
-                                    INFO6=""#
-                                    INFO6=INFO_2+Mod
-                                    while len(INFO6)!=len(INFO2):
-                                    	INFO6="0"+INFO6
-                             
-                                  
-                                
-                                    INFO2=INFO6
+                                    N2=N
+                                    N=N//2
+                                    N1=N%2
+                                    if N1==0:
+                                    	N3=N%2
+                                    	if N3==0:
+                                    		N=N-1
+                                    	else:
+                                    		N=N2-1
+                                    else:
+                                    	N=N2-1
 
-                                
-                                    #print(len(INFO6))
-                                    
-                                    
-                                    long_file2=len(INFO6)
-                                   
-                                    #Huffman
-                                    if INFO2[long_file2-2:long_file2]=="10":
-                                    	INFO3=INFO2[:long_file2-2]+"00"
-                                    elif INFO2[long_file2-2:long_file2]=="01":
-                                    	INFO3=INFO2[:long_file2-2]+"10"
-                                    elif INFO2[long_file2-2:long_file2]=="11":
-                                    	INFO3=INFO2[:long_file2-2]+"01"
-                                    elif INFO2[long_file2-2:long_file2]=="00":
-                                    	INFO3=INFO2[:long_file2-2]+"11"                                     
-                                    #print(len(INFO3))
-                                    
-                                    #Reverse
-                                    block3=Times3
-                                    long_3=len(INFO3)
-                                 
-                                    INFO4=""
-                                    INFO_3=""
-                                    
-                                    while block3<long_3:
-                                    	INFO_3=INFO3[block3:block3+1]
-                                    	
-                                    	if INFO_3=="0":
-                                    		INFO4+="1"
-                                    	elif INFO_3=="1":
-                                    		INFO4+="0"
-                                    	block3+=1
-                                    
-                                    INFO4=INFO3[:Times3]+INFO4[Times3:]
-                                    INFO2=INFO4
-                                    INFO3=INFO4
-                                    #print(INFO2)
-                                       
-                                    
-                                    #n = int(INFO2, 2)
-                                                                                                    
-                                            
-                                    #n = int(INFO2, 2)                                                                                     
-                                            
-                                    #binary_to_data=len(INFO2)
-                                    #binary_to_data=(binary_to_data/8)*2
-                                    #binary_to_data=str(binary_to_data)
-                                    #binary_to_data="%0"+binary_to_data+"x"
-                                    #jl=binascii.unhexlify(binary_to_data % n)
-                                    #print(len(jl))
-                                    #
-                                    #
-                                    #print(len(jl))
-                                    #print(Times3)
                                     
                                     Times3+=1  
-                                    if Times3==long_file1*2:
+                                    if N<=(2**256)-1 or Times3==(2**48)-1:
                                         #print(Bias2)
-                                        
-                                   
+                                        INFO3=bin(N)[2:]
 
-                                        
-                                     
-     #print(Bias2)
                                         Times=1
                                     #print(Times)
                                     if Times==1:
-                                       Start_file=INFO3
-                                       size_data3=INFO3
-                                       while size_data3[0:1]!="1":
-                                                if size_data3[0:1]=="0":
-                                                    Start_file=Start_file[1:]
-                                                    size_data3=size_data3[1:]
-                                                    B1=format(long_file1,'032b')
-                                                    INFO3=B1+Start_file
+                                       B5=format(Times3,'048b')
+                                       B1=format(long_file1,'032b')
+                                       INFO3="1"+INFO3
+                                       long_file=len(INFO3)
+                                       add_bits118=""
+                                       count_bits=8-long_file%8
+                                       z=0
+                                       if count_bits!=8:
+                                            while z<count_bits:
+                                                add_bits118="0"+add_bits118
+                                                z=z+1
+                                       INFO3=add_bits118+INFO3
+                                       INFO3=B1+B5+INFO3
                                      
                                       
                                        n = int(INFO3, 2)
