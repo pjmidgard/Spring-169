@@ -218,8 +218,8 @@ class compression:
                                 
                                 
                                 
-                                Long_file=int(INFO2[56:136],2)
-                                #print(Long_file)
+                                Long_file=int(INFO2[24:56],2)
+                               # print(Long_file)
 
                                 
                                     
@@ -229,9 +229,11 @@ class compression:
 
                                 
                                 #print(Long_file)
-                                Times_compress=int(INFO2[24:56],2)
+                                Times_compress=int(INFO2[56:136],2)
+                                #print(Times_compress)
                                 
                                 Divide_Number=int(INFO2[0:24],2)
+                              
                                 #print(Divide_Number)
                                 C1="0"+str(Long_file*8)+"b"
                                 N_Start=0
@@ -242,13 +244,14 @@ class compression:
                                 
                                 Start_file=format(N_Start,C1)
                                 Finish_file1=INFO2
+                                #print(Start_file)
                               
                                     	#print(Start_file)
                                 
                                 while Finish_file1!=Finish_file2:
                                     if Times3==0:
                                         Start_file=format(N_Start,C1)
-                                        INFO2="1"+Start_file
+                                        INFO2=Start_file
                                         N11=Divide_Number
                                     
                                     	  
@@ -304,6 +307,7 @@ class compression:
 
                                     
                                     Times3+=1  
+                                    Times2=0
                                     #print(Times3)
                                     if N>-1 and N<=(2**256) or Times3==(2**80)-1:
                                         #print(Bias2)
@@ -317,12 +321,15 @@ class compression:
                                         		INFO3="110"+INFO3
                                         	else:
                                         		INFO3="111"+INFO3
+                                        Times2=1
+                                       
 
-                                        Times=1
-                                    #print(Times)
-                                    if Times==1:
+                                       
+                                    
+                                    if Times2==1:
+                                      
                                        B5=format(Times3,'080b')
-                                       B1=format(long_file1,'032b')
+                                       B1=format(Long_file,'032b')
                                        
                                        long_file=len(INFO3)
                                        add_bits118=""
@@ -508,7 +515,7 @@ class compression:
                                             while z<xc:
                                                 INFO="0"+INFO
                                                 z=z+1
-                                        INFO2="1"+INFO
+                                        INFO2=INFO
                                         long_file3=len(INFO2)
                                         if Times3==0:
                                         	N1=1
