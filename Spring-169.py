@@ -74,11 +74,11 @@ class compression:
                     INFO3=""
                     INFO2=""
 
-                    ssTimes_change_info=0
+           
                     
                     
 
-                 
+              
                     
 
                     count_time_of_copression=0
@@ -94,7 +94,7 @@ class compression:
                        
                     INFO3=""
 
-                    ssTimes_change_info=0
+         
                         
                     
 
@@ -456,7 +456,7 @@ class compression:
                        
                         INFO3=""
                         INFO_5=""
-                        ssTimes_change_info=0
+     
                         
                         
 
