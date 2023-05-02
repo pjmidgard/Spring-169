@@ -78,7 +78,7 @@ class compression:
                     
                     
 
-                    block=2
+                 
                     
 
                     count_time_of_copression=0
@@ -98,7 +98,7 @@ class compression:
                         
                     
 
-                    block=0
+                 
 
                     x=0
                     x1=0
@@ -418,7 +418,7 @@ class compression:
                         namem=""
                         namema="?"
                         
-                        R=0
+                      
                        
                         
                         count3=0
@@ -460,7 +460,7 @@ class compression:
                         
                         
 
-                        block=0
+                      
 
                         x=0
                         x1=0
