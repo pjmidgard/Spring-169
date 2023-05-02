@@ -275,14 +275,14 @@ class compression:
                                     if N>-1 and N!=0:                   
                                     	N=N//2
                                     	N1=N2%2
-                                    if N==0:
-                                    	N=0
-                                    elif N<0 and N!=0:
+                                   
+                             
+                                    if N<0 and N!=0:
                                     	N7=1
                                     elif N>-1 and N!=0:
 	                                    if N1==0:
 	                                    	N3=N%2
-	                                    	N5=N
+	                                    	
 	                                    	N4=N//2
 	                                    	N6=N4%2
 	                                    	N8=N4//2
@@ -544,7 +544,7 @@ class compression:
                                         N3=0
                                         N1=0
                                         N4=0
-                                        N5=0
+                                       
                                         N6=0
                                         N7=0
                                         N8=0
@@ -559,14 +559,14 @@ class compression:
                                     if N>-1 and N!=0:                   
                                     	N=N//2
                                     	N1=N2%2
-                                    if N==0:
-                                    	N=0
-                                    elif N<0 and N!=0:
+                                
+                             
+                                    if N<0 and N!=0:
                                     	N7=1
                                     elif N>-1 and N!=0:
 	                                    if N1==0:
 	                                    	N3=N%2
-	                                    	N5=N
+	                                    	
 	                                    	N4=N//2
 	                                    	N6=N4%2
 	                                    	N8=N4//2
