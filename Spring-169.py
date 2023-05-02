@@ -223,7 +223,7 @@ class compression:
 
                                 
                                     
-                                Byte_Divide=32
+                    
                                 
                                 
 
