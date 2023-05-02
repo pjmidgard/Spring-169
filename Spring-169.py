@@ -88,7 +88,7 @@ class compression:
                     s=""
                                         
                     
-                    c=2
+                   
                     
                     
                        
@@ -450,7 +450,7 @@ class compression:
                         
                         
                         
-                        c=2
+                       
                         
                         
                        
