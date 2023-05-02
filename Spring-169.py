@@ -66,7 +66,7 @@ class compression:
                     Times_change_info=2
                     Times_change_info1=0
                     s=""
-                    c=2
+                    
                     
                     
                    
