@@ -64,7 +64,7 @@ class compression:
                     countraz=0
                     Times=0
                     Times_change_info=2
-                    Times_change_info1=0
+                    
                     s=""
                     
                     
@@ -84,7 +84,7 @@ class compression:
                     count_time_of_copression=0
                     countraz=0
                     Times_change_info=2
-                    Times_change_info1=0
+                   
                     s=""
                                         
                     
@@ -444,7 +444,7 @@ class compression:
                         nameas=name+".bin" 
                         countraz=0
                         Times_change_info=2
-                        Times_change_info1=0
+                       
                         s=""
                         INFO_5=""
                         
