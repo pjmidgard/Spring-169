@@ -33,8 +33,8 @@ class compression:
                         
                    
                     
-                    count3=0
-                    count4=-1
+                    
+                  
                    
                     Times1=0
                     Times3=0
@@ -69,7 +69,7 @@ class compression:
                     c=2
                     
                     
-                    count4=-1
+                   
                  
                     INFO3=""
                     INFO2=""
@@ -421,8 +421,8 @@ class compression:
                       
                        
                         
-                        count3=0
-                        count4=-1
+                      
+                   
                        
                         Times1=0
                         Times3=0
