@@ -1,5 +1,4 @@
 from time import time
-Times_change_info=0
 import os
 import binascii
 namez = input("c  for compress or e for extract: ")
@@ -59,11 +58,11 @@ class compression:
                     
                     Save_name=len(nameas)
 
-                    Times_of_compression=0
+              
                     
                     countraz=0
                     Times=0
-                    Times_change_info=2
+                
                     
                     s=""
                     
@@ -83,7 +82,7 @@ class compression:
 
               
                     countraz=0
-                    Times_change_info=2
+             
                    
                     s=""
                                         
@@ -147,7 +146,7 @@ class compression:
                 
            
                     
-                            Times_change_info=Times_change_info+1
+                   
                             
                 
                     
@@ -443,7 +442,7 @@ class compression:
                     
                         nameas=name+".bin" 
                         countraz=0
-                        Times_change_info=2
+               
                        
                         s=""
                         INFO_5=""
@@ -499,7 +498,7 @@ class compression:
                                 
                                 
                                 
-                                Times_change_info=Times_change_info+1
+                                
                                 
                                 countraz=countraz+1
 
