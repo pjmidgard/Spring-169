@@ -22,7 +22,7 @@ class compression:
                     namea=""
                     namem=""
                     namema="?"
-                    Times_of_compression1=0
+              
                     
                     
                     Times1=0
@@ -37,7 +37,7 @@ class compression:
                    
                     Times1=0
                     Times3=0
-                    Times_of_compression=0
+                   
                     
               
 
@@ -425,7 +425,7 @@ class compression:
                        
                         Times1=0
                         Times3=0
-                        Times_of_compression=0
+                   
                         
               
 
