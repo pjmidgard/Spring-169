@@ -81,7 +81,7 @@ class compression:
               
                     
 
-                    count_time_of_copression=0
+              
                     countraz=0
                     Times_change_info=2
                    
