@@ -8,7 +8,7 @@ Add "1" If number divide by two we it and if again it divide by two after minus 
 For Quantum computer of 2050 year.
 Need 1 Billion Cubits and 80 GB of RAM for 4GB file.
 2KB-50B Random Generated File. It can compress 4GB to 50B.
-Fantasy compression Software.
+Fantasy compression software.
 
 
 
