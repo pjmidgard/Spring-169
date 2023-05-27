@@ -6,6 +6,7 @@ if we dived by 6 it divide by 2 that mean it divide 3.
 elif not divide 2, but divide by 3 we stop.
 else:
 -1
+Fix divide.
 
 
 
