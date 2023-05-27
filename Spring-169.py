@@ -515,7 +515,7 @@ class compression:
                                         if N7==0:
                                             N-=1
                                   
-                                    print(N)
+                                    #print(N)
                                                                                     
                                    
                                       
