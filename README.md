@@ -10,7 +10,7 @@ elif not divide 2, but divide by 3 we stop.
 else:
 -1
 
-Fix divide.
+if we Divided by 3 save 1 if we save one not check elif.
 
 
 
