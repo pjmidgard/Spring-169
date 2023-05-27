@@ -505,10 +505,12 @@ class compression:
                                     N2=N%6
                                     N3=N%2
                                     N4=N%3
-                                    if N2==0:
+                                    if N3==0 and N4==0:
                                             N//=2
-                                    elif N3!=2 and N4==3:
+                                            N6=1
+                                    elif N3!=0 and N4==0 and N6!=1:
                                         N7=1
+                                        N6=0
                                     else:
                                         if N7==0:
                                             N-=1
