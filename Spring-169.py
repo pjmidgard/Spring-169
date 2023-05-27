@@ -265,42 +265,21 @@ class compression:
                                         N8=0
                                         N9=0
                                         
+                                    N2=N%2
+                                    N3=N%3
+                                    
+                                    if N2==0 and N3==0:
+                                            N//=2
+                                    else:
+                                            N-=1
+                                            
+                                    print(N)
+                                            
+                                        
                                         
                                    
                                       
-                                    N=-N
-                                    #print(N)
-                                    N2=N
-                                    if N>-1 and N!=0:                   
-                                    	N=N//2
-                                    	N1=N2%2
-                                   
-                             
-                                    if N<0 and N!=0:
-                                    	N7=1
-                                    elif N>-1 and N!=0:
-	                                    if N1==0:
-	                                    	N3=N%2
-	                                    	
-	                                    	N4=N//2
-	                                    	N6=N4%2
-	                                    	N8=N4//2
-	                                
-	                                    	N9=N8%2
-	                                    	if N3==0:
-	                                    		N=N
-	                                    		if N9==1 and N6==0:
-	                                    			N=N4-1#//2//!2
-	                                    			
-	                                    		else:
-	                                    			N=N2-1#//2//2
-	                                    		
-	                                    	else:
-	                                    		N=N2-1#//2
-	                                    		N=-N
-	                                    		N7=0
-	                                    else:
-	                                    	N=N2-1#//!2
+
                                     
 
 
@@ -310,16 +289,10 @@ class compression:
                                     #print(Times3)
                                     if N>-1 and N<=(2**256) or Times3==(2**80)-1:
                                         #print(Bias2)
-                                        if N>-1:
-                                        	INFO3=bin(N)[2:]
-                                        	INFO3="10"+INFO3
-                                        else:
-                                        	N=-N
-                                        	INFO3=bin(N)[2:]
-                                        	if N7==1:
-                                        		INFO3="110"+INFO3
-                                        	else:
-                                        		INFO3="111"+INFO3
+                                       
+                                        INFO3=bin(N)[2:]
+                                        INFO3="1"+INFO3
+                                 
                                         Times2=1
                                        
 
@@ -515,27 +488,7 @@ class compression:
                                                 INFO="0"+INFO
                                                 z=z+1
                                         INFO2=INFO
-                                        long_file3=len(INFO2)
-                                        if Times3==0:
-                                        	N1=1
-                                        	N5=0
-                                        	N6=0
-                                        	N11=2**24
-                                        	long=len(INFO2)
-                                        	N=int(INFO2,2)
-                                        	while N6!=1:
-                                        		N11-=1
-                                        		#print(N11)
-                                        		if N==0:
-                                        			N11=1
-                                        			N6=1
-                                        		if N11==0:
-                                        			N11-=1
-                                        		N5=N//(N11)
-                                        		N1=N%(N11)
-                                        		if N1==0 and N5!=0:
-                                        			N6=1
-                                        #print(N11)
+                                        
                                         
                                         N=int(INFO2,2)
                                         #print(N)
@@ -548,58 +501,32 @@ class compression:
                                         N7=0
                                         N8=0
                                         N9=0
-                                        
-                                        
+                                                                      
+                                    N2=N%6
+                                    N3=N%2
+                                    N4=N%3
+                                    if N2==0:
+                                            N//=2
+                                    elif N3!=2 and N4==3:
+                                        N7=1
+                                    else:
+                                        if N7==0:
+                                            N-=1
+                                  
+                                    print(N)
+                                                                                    
                                    
                                       
-                                    N=-N
-                                    #print(N)
-                                    N2=N
-                                    if N>-1 and N!=0:                   
-                                    	N=N//2
-                                    	N1=N2%2
-                                
-                             
-                                    if N<0 and N!=0:
-                                    	N7=1
-                                    elif N>-1 and N!=0:
-	                                    if N1==0:
-	                                    	N3=N%2
-	                                    	
-	                                    	N4=N//2
-	                                    	N6=N4%2
-	                                    	N8=N4//2
-	                                
-	                                    	N9=N8%2
-	                                    	if N3==0:
-	                                    		N=N
-	                                    		if N9==1 and N6==0:
-	                                    			N=N4-1#//2//!2
-	                                    			
-	                                    		else:
-	                                    			N=N2-1#//2//2
-	                                    		
-	                                    	else:
-	                                    		N=N2-1#//2
-	                                    		N=-N
-	                                    		N7=0
-	                                    else:
-	                                    	N=N2-1#//!2
+
 
                                     #print(N)
                                     Times3+=1  
-                                    if N>-1 and N<=(2**256) or Times3==(2**80)-1:
+                                    if N==0 or N7==1 or Times3==(2**80)-1:
                                         #print(Bias2)
                                         if N>-1:
                                         	INFO3=bin(N)[2:]
-                                        	INFO3="10"+INFO3
-                                        else:
-                                        	N=-N
-                                        	INFO3=bin(N)[2:]
-                                        	if N7==1:
-                                        		INFO3="110"+INFO3
-                                        	else:
-                                        		INFO3="111"+INFO3
+                                        	INFO3="1"+INFO3
+                          
 
                                         Times=1
                                     #print(Times)
@@ -616,8 +543,8 @@ class compression:
                                                 add_bits118="0"+add_bits118
                                                 z=z+1
                                        INFO3=add_bits118+INFO3
-                                       B4=format(N11,'024b')
-                                       INFO3=B4+B1+B5+INFO3
+                                    
+                                       INFO3=B1+B5+INFO3
                                      
                                      
                                       
