@@ -12,6 +12,10 @@ else:
 
 if we Divided by 3 save 1 if we save one not check elif.
 
+Divided by 1 or many times.
+
+Save divide in three bytes.
+
 
 
 
