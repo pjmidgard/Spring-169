@@ -512,6 +512,7 @@ class compression:
                                         N7=1
                                         N6=0
                                     else:
+                                        N6=0
                                         if N7==0:
                                             N-=1
                                   
