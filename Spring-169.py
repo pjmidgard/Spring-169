@@ -217,7 +217,7 @@ class compression:
                                 
                                 
                                 
-                                Long_file=int(INFO2[24:56],2)
+                                Long_file=int(INFO2[0:32],2)
                                # print(Long_file)
 
                                 
@@ -228,10 +228,10 @@ class compression:
 
                                 
                                 #print(Long_file)
-                                Times_compress=int(INFO2[56:136],2)
+                                Times_compress=int(INFO2[32:112],2)
                                 #print(Times_compress)
                                 
-                                Divide_Number=int(INFO2[0:24],2)
+                                
                               
                                 #print(Divide_Number)
                                 C1="0"+str(Long_file*8)+"b"
@@ -251,7 +251,7 @@ class compression:
                                     if Times3==0:
                                         Start_file=format(N_Start,C1)
                                         INFO2=Start_file
-                                        N11=Divide_Number
+                                      
                                     
                                     	  
                                         N=int(INFO2,2)
@@ -265,15 +265,19 @@ class compression:
                                         N8=0
                                         N9=0
                                         
-                                    N2=N%2
-                                    N3=N%3
-                                    
-                                    if N2==0 and N3==0:
+                                    N2=N%6
+                                    N3=N%2
+                                    N4=N%3
+                                    if N3==0 and N4==0 and N6==0:
                                             N//=2
+                                            N6=1
+                                    elif N3!=0 and N4==0 and N6!=1:
+                                        N7=1
+                                        N6=0
                                     else:
+                                        N6=0
+                                        if N7==0:
                                             N-=1
-                                            
-                                    print(N)
                                             
                                         
                                         
@@ -287,7 +291,7 @@ class compression:
                                     Times3+=1  
                                     Times2=0
                                     #print(Times3)
-                                    if N>-1 and N<=(2**256) or Times3==(2**80)-1:
+                                    if N==0 or N7==1 or Times3==(2**80)-1:
                                         #print(Bias2)
                                        
                                         INFO3=bin(N)[2:]
@@ -312,8 +316,8 @@ class compression:
                                                 add_bits118="0"+add_bits118
                                                 z=z+1
                                        INFO3=add_bits118+INFO3
-                                       B4=format(N11,'024b')
-                                       INFO3=B4+B1+B5+INFO3
+                                    
+                                       INFO3=B1+B5+INFO3
                                        Finish_file2=INFO3
                                        Times3=0
                                        #print(Times3)
@@ -321,7 +325,7 @@ class compression:
                                            INFO3=Start_file
                                            Times=1
                                        else:
-                                           N_Start=N_Start+Divide_Number
+                                           N_Start=N_Start+1
                                            #print(N_Start)
 											                                                                                            
 											                                                                                            
@@ -505,7 +509,7 @@ class compression:
                                     N2=N%6
                                     N3=N%2
                                     N4=N%3
-                                    if N3==0 and N4==0:
+                                    if N3==0 and N4==0 and N6==0:
                                             N//=2
                                             N6=1
                                     elif N3!=0 and N4==0 and N6!=1:
@@ -516,7 +520,7 @@ class compression:
                                         if N7==0:
                                             N-=1
                                   
-                                    #print(N)
+                                    #print(N2)
                                                                                     
                                    
                                       
