@@ -257,6 +257,7 @@ class compression:
                                     
                                     	  
                                         N=int(INFO2,2)
+                                        #print(N)
                                         N2=0
                                         N3=0
                                         N1=0
@@ -266,18 +267,21 @@ class compression:
                                         N7=0
                                         N8=0
                                         N9=0
-                                        
+                                                                      
                                     N2=N%6
                                     N3=N%2
                                     N4=N%3
                                     if N3==0 and N4==0:
                                             N//=2
                                             N6=1
-                                    elif N3!=0 and N4==0 and N6!=1:
+                                            N8+=1
+                                    elif N3!=0 and N4==0 and N6!=1 or N8==20:
                                         N7=1
                                         N6=0
+                                        N8=0
                                     else:
                                         N6=0
+                                        N8=0
                                         if N7==0:
                                             N-=1
                                             
@@ -507,7 +511,7 @@ class compression:
                                         	N=int(INFO2,2)
                                         	while N6!=1:
                                         		N11-=1
-                                        		#print(N11)
+                                        		# print(N11)
                                         		if N==0:
                                         			N11=1
                                         			N6=1
@@ -537,15 +541,18 @@ class compression:
                                     if N3==0 and N4==0:
                                             N//=2
                                             N6=1
-                                    elif N3!=0 and N4==0 and N6!=1:
+                                            N8+=1
+                                    elif N3!=0 and N4==0 and N6!=1 or N8==20:
                                         N7=1
                                         N6=0
+                                        N8=0
                                     else:
                                         N6=0
+                                        N8=0
                                         if N7==0:
                                             N-=1
                                   
-                                    #print(N2)
+                                    #print(N8)
                                                                                     
                                    
                                       
