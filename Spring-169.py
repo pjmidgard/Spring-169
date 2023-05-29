@@ -253,7 +253,11 @@ class compression:
                                         Start_file=format(N_Start,C1)
                                         INFO2=Start_file
                                         N11=Divide_Number
-                                      
+                                        TD=N11	
+                                        TD1=0		
+                                        while TD!=0:#Times Divide
+                                            TD//=2
+                                            TD1+=1                                      
                                     
                                     	  
                                         N=int(INFO2,2)
@@ -275,7 +279,7 @@ class compression:
                                             N//=2
                                             N6=1
                                             N8+=1
-                                    elif N3!=0 and N4==0 and N6!=1 or N8==20:
+                                    elif N3!=0 and N4==0 and N6!=1 or N8==TD1:
                                         N7=1
                                         N6=0
                                         N8=0
@@ -521,7 +525,12 @@ class compression:
                                         		N1=N%(N11)
                                         		if N1==0 and N5!=0:
                                         			N6=1
-                                        #print(N11)                                        
+                                        TD=N11	
+                                        TD1=0		
+                                        while TD!=0:#Times Divide
+                                            TD//=2
+                                            TD1+=1
+                                                                                                                      
                                         
                                         N=int(INFO2,2)
                                         #print(N)
@@ -542,7 +551,7 @@ class compression:
                                             N//=2
                                             N6=1
                                             N8+=1
-                                    elif N3!=0 and N4==0 and N6!=1 or N8==20:
+                                    elif N3!=0 and N4==0 and N6!=1 or N8==TD1:
                                         N7=1
                                         N6=0
                                         N8=0
@@ -552,7 +561,7 @@ class compression:
                                         if N7==0:
                                             N-=1
                                   
-                                    #print(N8)
+                                    #print(N)
                                                                                     
                                    
                                       
@@ -627,7 +636,7 @@ class compression:
                                                        
 
                                                        
-                                                   
+                                      
                                                        
                                                     f2.write(jl)
                                                     x2 = time()
