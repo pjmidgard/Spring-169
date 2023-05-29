@@ -230,9 +230,11 @@ class compression:
                                 #print(Long_file)
                                 Times_compress=int(INFO2[32:112],2)
                                 Divide_Number=int(INFO2[112:136],2)
-                                #print(Times_compress)
-                                
-                                
+                                TD=Divide_Number	
+                                TD1=0		
+                                while TD!=0:#Times Divide
+                                      TD//=2
+                                      TD1+=1                                      
                               
                                 #print(Divide_Number)
                                 C1="0"+str(Long_file*8)+"b"
