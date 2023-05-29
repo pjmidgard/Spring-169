@@ -228,8 +228,8 @@ class compression:
 
                                 
                                 #print(Long_file)
-                                Times_compress=int(INFO2[32:112],2)
-                                Divide_Number=int(INFO2[112:136],2)
+                               
+                                Divide_Number=int(INFO2[32:56],2)
                                 TD=Divide_Number	
                                 TD1=0		
                                 while TD!=0:#Times Divide
@@ -312,8 +312,11 @@ class compression:
                                     
                                     if Times2==1:
                                       
-                                       B5=format(Times3,'080b')
-                                       B1=format(Long_file,'032b')
+                                       B5=bin(Times3)[2:]
+                                       B_L=len(B5)
+                                       B1=format(Long_file,'032b')
+                                       BL=format(B_L,'07b')
+                                       INFO3=BL+B5+INFO3
                                        
                                        long_file=len(INFO3)
                                        add_bits118=""
@@ -326,7 +329,7 @@ class compression:
                                        INFO3=add_bits118+INFO3
                                        B4=format(N11,'024b')
                                     
-                                       INFO3=B1+B5+B4+INFO3
+                                       INFO3=B1+B4+INFO3
                                        Finish_file2=INFO3
                                        Times3=0
                                        #print(Times3)
@@ -577,8 +580,13 @@ class compression:
                                         Times=1
                                     #print(Times)
                                     if Times==1:
-                                       B5=format(Times3,'080b')
-                                       B1=format(long_file1,'032b')
+                                       B5=bin(Times3)[2:]
+                                       B_L=len(B5)
+                                       B1=format(long_file1,'032b')
+                                       BL=format(B_L,'07b')
+                                       INFO3=BL+B5+INFO3   
+                                    
+
                                        B4=format(N11,'024b')
                                        
                                        long_file=len(INFO3)
@@ -591,7 +599,7 @@ class compression:
                                                 z=z+1
                                        INFO3=add_bits118+INFO3
                                     
-                                       INFO3=B1+B5+B4+INFO3
+                                       INFO3=B1+B4+INFO3
                                      
                                      
                                       
