@@ -536,7 +536,7 @@ class compression:
                                                     x3=x2-x
 
 
-                                                    return print(x3)                                                             
+                                                    return x3;                                                         
     def cryptograpy_compression(self):                      
                     if namez=="c":
 
@@ -900,7 +900,7 @@ class compression:
                                                     x2 = time()
 
                                                     x3=x2-x
-                                                    return print(x3)       
+                                                    return x3;    
 d=compression()
 xw1=d.cryptograpy_unpack()
 print(xw1)
